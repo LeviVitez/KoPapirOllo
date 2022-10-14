@@ -3,6 +3,8 @@ package com.example.kopapirollo;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -133,7 +135,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void jatekvege(){
-
+        if (emberwin==3){
+            Intent intent = getIntent();
+            finish();
+            AlertDialog.Builder emberwin=new AlertDialog.Builder(this);
+            emberwin.setTitle("Győzelem");
+            emberwin.setMessage("Szeretnél még játtszani?");
+            emberwin.setPositiveButton("igen", (DialogInterface.OnClickListener) intent);
+        }
+        if (gepwin==3){
+            Intent intent = getIntent();
+            finish();
+            AlertDialog.Builder emberwin=new AlertDialog.Builder(this);
+            emberwin.setTitle("Vesztettél");
+            emberwin.setMessage("Szeretnél még játtszani?");
+            emberwin.setPositiveButton("igen", (DialogInterface.OnClickListener) intent);
+        }
     }
 
     public void init(){
